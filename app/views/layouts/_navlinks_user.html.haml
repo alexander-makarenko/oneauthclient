@@ -1,0 +1,12 @@
+%li.dropdown
+  = link_to '#', class: 'dropdown-toggle', id: 'account-dropdown', data: { toggle: 'dropdown' }, role: 'button' do
+    #user-name= current_user.full_name
+    %span.caret
+  %ul.dropdown-menu{ 'aria-labelledby': 'accountDropdown' }
+    - if current_user.email
+      %li.dropdown-header= current_user.email
+      %li.divider{ role: 'separator' }
+    %li
+      = link_to signout_path, method: :delete do
+        %span.glyphicon.glyphicon-log-out
+        Sign out

@@ -1,0 +1,9 @@
+.jumbotron.text-center
+  - if signed_in?
+    %h2 Yay!
+    %h4 You are authenticated
+  - else
+    %h2 Welcome!
+    %h4
+      Please
+      = link_to 'log in', @auth_form_url
